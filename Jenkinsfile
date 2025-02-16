@@ -9,13 +9,13 @@ pipeline{
                 sh 'mvn clean install'
             }
         }
-              stage('sonarqube analysis'){
+              stage('sonarqQube analysis'){
                environment{
                 scannerHome = tool 'sonar scanner'
 }
             steps{
               with SonarQubeEnv('sonar server'){
-              sh "${sonarHome}/bin/sonar scanner"
+              sh "${scannerHome}/bin/sonar scanner"
            }
        }
      }
